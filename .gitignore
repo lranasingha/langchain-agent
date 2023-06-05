@@ -1,5 +1,9 @@
 .idea
-.DS_Store
+**/.DS_Store
+
+# vector dbs
+**/deep_lake/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

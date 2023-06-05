@@ -4,3 +4,6 @@ openai
 huggingface_hub
 chromadb
 pypdf
+sentence-transformers
+deeplake
+tiktoken
