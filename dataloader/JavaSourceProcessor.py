@@ -1,7 +1,6 @@
 import os
 
 from langchain.document_loaders import TextLoader
-from langchain.text_splitter import CharacterTextSplitter, TokenTextSplitter, RecursiveCharacterTextSplitter
 from langchain.text_splitter import (
     RecursiveCharacterTextSplitter,
     Language,
@@ -34,7 +33,7 @@ class JavaSourceProcessor:
 
 if __name__ == '__main__':
     java_source_loader = JavaSourceProcessor()
-    docs = java_source_loader.load_source("/Users/centaurus/development/ai/data/jdk")
+    docs = java_source_loader.load_source("TODO")
     print(len(docs))
     print(docs[0])
     java_source_loader.split_java_files(docs)

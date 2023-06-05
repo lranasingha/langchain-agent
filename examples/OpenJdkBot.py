@@ -1,17 +1,14 @@
-from langchain.chains import ConversationalRetrievalChain, RetrievalQA
-from langchain.chat_models import ChatOpenAI
-from langchain.embeddings import HuggingFaceEmbeddings, OpenAIEmbeddings
-from langchain.llms import OpenAIChat
+import os
+
+from langchain.embeddings import HuggingFaceEmbeddings
 
 from dataloader.JavaSourceProcessor import JavaSourceProcessor
-from embeddings.HuggingFaceHubEmbeddings import HuggingFaceHubEmbeddings
-from index.ChromaVectoriser import ChromaVectoriser
 from index.DataRetriever import DataRetriever
 from index.DeepLakeVectoriser import DeepLakeVectoriser
 
 if __name__ == '__main__':
     source_processor = JavaSourceProcessor()
-    docs = source_processor.load_source('/Users/centaurus/development/ai/data/jdk')
+    docs = source_processor.load_source(os.environ['GIT_REPO_PATH'])
     print(f'loaded docs - {len(docs)}')
     tokenised_docs = source_processor.split_java_files(docs)
     embeddings = HuggingFaceEmbeddings()
